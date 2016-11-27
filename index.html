@@ -65,6 +65,70 @@ add the dependency line to your <code>Cargo.toml</code> file:</p>
 
 <p>The best place to find example code is in the project <code>examples</code> directory.  There is a simple hello-world example, and a more complete asteroids-like game.</p>
 
+<p>Here's what hello world looks like.  It's a bit verbose, sorry.  :-P</p>
+
+<div class="highlight highlight-source-rust"><pre><span class="pl-k">extern</span> <span class="pl-k">crate</span> ggez<span class="pl-k">;</span>
+<span class="pl-k">use</span> std<span class="pl-k">::</span>path<span class="pl-k">;</span>
+<span class="pl-k">use</span> ggez<span class="pl-k">::</span>conf<span class="pl-k">;</span>
+<span class="pl-k">use</span> ggez<span class="pl-k">::</span>game<span class="pl-k">::</span>{<span class="pl-k">Game</span><span class="pl-k">,</span> <span class="pl-k">GameState</span>}<span class="pl-k">;</span>
+<span class="pl-k">use</span> ggez<span class="pl-k">::</span>{<span class="pl-k">GameResult</span><span class="pl-k">,</span> <span class="pl-k">Context</span>}<span class="pl-k">;</span>
+<span class="pl-k">use</span> ggez<span class="pl-k">::</span>graphics<span class="pl-k">;</span>
+<span class="pl-k">use</span> ggez<span class="pl-k">::</span>timer<span class="pl-k">;</span>
+<span class="pl-k">use</span> std<span class="pl-k">::</span>time<span class="pl-k">::</span><span class="pl-k">Duration</span><span class="pl-k">;</span>
+
+<span class="pl-c">// First we make a structure to contain the game's state</span>
+<span class="pl-k">struct</span> <span class="pl-k">MainState</span> {
+    text<span class="pl-k">:</span> graphics<span class="pl-k">::</span><span class="pl-k">Text</span><span class="pl-k">,</span>
+}
+
+<span class="pl-c">// Then we implement the `ggez::game::GameState` trait on it, which</span>
+<span class="pl-c">// requires callbacks for creating the game state, updating it each</span>
+<span class="pl-c">// frame, and drawing it.</span>
+<span class="pl-c">//</span>
+<span class="pl-c">// The `GameState` trait also contains callbacks for event handling</span>
+<span class="pl-c">// that you can override if you wish, but the defaults are fine.</span>
+<span class="pl-k">impl</span> <span class="pl-k">GameState</span> <span class="pl-k">for</span> <span class="pl-k">MainState</span> {
+    <span class="pl-k">fn</span> <span class="pl-en">load</span>(ctx<span class="pl-k">:</span> <span class="pl-k">&amp;</span><span class="pl-k">mut</span> <span class="pl-k">Context</span><span class="pl-k">,</span> _conf<span class="pl-k">:</span> <span class="pl-k">&amp;</span>conf<span class="pl-k">::</span><span class="pl-k">Conf</span>) <span class="pl-k">-&gt;</span> <span class="pl-k">GameResult</span><span class="pl-k">&lt;</span><span class="pl-k">MainState</span><span class="pl-k">&gt;</span> {
+        <span class="pl-k">let</span> fontpath <span class="pl-k">=</span> path<span class="pl-k">::</span><span class="pl-k">Path</span><span class="pl-k">::</span><span class="pl-c1">new</span>(<span class="pl-s">"DejaVuSerif.ttf"</span>)<span class="pl-k">;</span>
+        <span class="pl-k">let</span> font <span class="pl-k">=</span> graphics<span class="pl-k">::</span><span class="pl-k">Font</span><span class="pl-k">::</span><span class="pl-c1">new</span>(ctx<span class="pl-k">,</span> fontpath<span class="pl-k">,</span> <span class="pl-c1">48</span>)<span class="pl-k">.</span><span class="pl-c1">unwrap</span>()<span class="pl-k">;</span>
+        <span class="pl-k">let</span> text <span class="pl-k">=</span> graphics<span class="pl-k">::</span><span class="pl-k">Text</span><span class="pl-k">::</span><span class="pl-c1">new</span>(ctx<span class="pl-k">,</span> <span class="pl-s">"Hello world!"</span><span class="pl-k">,</span> <span class="pl-k">&amp;</span>font)<span class="pl-k">.</span><span class="pl-c1">unwrap</span>()<span class="pl-k">;</span>
+
+        <span class="pl-k">let</span> s <span class="pl-k">=</span> <span class="pl-k">MainState</span> { text<span class="pl-k">:</span> text }<span class="pl-k">;</span>
+        <span class="pl-k">Ok</span>(s)
+    }
+
+    <span class="pl-k">fn</span> <span class="pl-en">update</span>(<span class="pl-k">&amp;</span><span class="pl-k">mut</span> <span class="pl-v">self</span><span class="pl-k">,</span> _ctx<span class="pl-k">:</span> <span class="pl-k">&amp;</span><span class="pl-k">mut</span> <span class="pl-k">Context</span><span class="pl-k">,</span> _dt<span class="pl-k">:</span> <span class="pl-k">Duration</span>) <span class="pl-k">-&gt;</span> <span class="pl-k">GameResult</span><span class="pl-k">&lt;</span>()<span class="pl-k">&gt;</span> {
+        <span class="pl-k">Ok</span>(())
+    }
+
+    <span class="pl-k">fn</span> <span class="pl-en">draw</span>(<span class="pl-k">&amp;</span><span class="pl-k">mut</span> <span class="pl-v">self</span><span class="pl-k">,</span> ctx<span class="pl-k">:</span> <span class="pl-k">&amp;</span><span class="pl-k">mut</span> <span class="pl-k">Context</span>) <span class="pl-k">-&gt;</span> <span class="pl-k">GameResult</span><span class="pl-k">&lt;</span>()<span class="pl-k">&gt;</span> {
+        ctx<span class="pl-k">.</span>renderer<span class="pl-k">.</span><span class="pl-c1">clear</span>()<span class="pl-k">;</span>
+        try<span class="pl-k">!</span>(graphics<span class="pl-k">::</span><span class="pl-c1">draw</span>(ctx<span class="pl-k">,</span> <span class="pl-k">&amp;</span><span class="pl-k">mut</span> <span class="pl-v">self</span><span class="pl-k">.</span>text<span class="pl-k">,</span> <span class="pl-k">None</span><span class="pl-k">,</span> <span class="pl-k">None</span>))<span class="pl-k">;</span>
+        ctx<span class="pl-k">.</span>renderer<span class="pl-k">.</span><span class="pl-c1">present</span>()<span class="pl-k">;</span>
+        timer<span class="pl-k">::</span><span class="pl-c1">sleep_until_next_frame</span>(ctx<span class="pl-k">,</span> <span class="pl-c1">60</span>)<span class="pl-k">;</span>
+        <span class="pl-k">Ok</span>(())
+    }
+}
+
+<span class="pl-c">// Now our main function, which does three things:</span>
+<span class="pl-c">//</span>
+<span class="pl-c">// * First, create a new `ggez::conf::Conf`</span>
+<span class="pl-c">// object which contains configuration info on things such</span>
+<span class="pl-c">// as screen resolution and window title,</span>
+<span class="pl-c">// * Second, create a `ggez::game::Game` object which will</span>
+<span class="pl-c">// do the work of creating our MainState and running our game,</span>
+<span class="pl-c">// * then just call `game.run()` which runs the `Game` mainloop.</span>
+<span class="pl-k">pub</span> <span class="pl-k">fn</span> <span class="pl-en">main</span>() {
+    <span class="pl-k">let</span> c <span class="pl-k">=</span> conf<span class="pl-k">::</span><span class="pl-k">Conf</span><span class="pl-k">::</span><span class="pl-c1">new</span>()<span class="pl-k">;</span>
+    <span class="pl-k">let</span> <span class="pl-k">mut</span> game<span class="pl-k">:</span> <span class="pl-k">Game</span><span class="pl-k">&lt;</span><span class="pl-k">MainState</span><span class="pl-k">&gt;</span> <span class="pl-k">=</span> <span class="pl-k">Game</span><span class="pl-k">::</span><span class="pl-c1">new</span>(<span class="pl-s">"helloworld"</span><span class="pl-k">,</span> c)<span class="pl-k">.</span><span class="pl-c1">unwrap</span>()<span class="pl-k">;</span>
+    <span class="pl-k">if</span> <span class="pl-k">let</span> <span class="pl-k">Err</span>(e) <span class="pl-k">=</span> game<span class="pl-k">.</span><span class="pl-c1">run</span>() {
+        println<span class="pl-k">!</span>(<span class="pl-s">"Error encountered: {:?}"</span><span class="pl-k">,</span> e)<span class="pl-k">;</span>
+    } <span class="pl-k">else</span> {
+        println<span class="pl-k">!</span>(<span class="pl-s">"Game exited cleanly."</span>)<span class="pl-k">;</span>
+    }
+}
+</pre></div>
+
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
