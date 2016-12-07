@@ -1,73 +1,73 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>ggez by ggez</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>ggez by ggez</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>ggez</h1>
-        <p>make good games easily</p>
+        <link rel="stylesheet" href="stylesheets/styles.css">
+        <link rel="stylesheet" href="stylesheets/github-light.css">
+        <meta name="viewport" content="width=device-width">
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>ggez</h1>
+                <p>make good games easily</p>
 
 
-        <p class="view"><a href="https://github.com/ggez">View My GitHub Profile</a></p>
+                <p class="view"><a href="https://github.com/ggez">View My GitHub Profile</a></p>
 
-      </header>
-      <section>
-        <h1>
-<a id="ggez" class="anchor" href="#ggez" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ggez</h1>
+            </header>
+            <section>
+                <h1>
+                    <a id="ggez" class="anchor" href="#ggez" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ggez</h1>
 
-<p>A Rust library to create Good Games Easily.</p>
+                <p>A Rust library to create Good Games Easily.</p>
 
-<p>More specifically, ggez is a lightweight game framework for making 2D games.  It aims to
-implement an API quite similar to (a Rustified version of) the Love2D game engine.  This means it will contain
-portable basic functionality, without including things that force your game to function a particular way.</p>
+                <p>More specifically, ggez is a lightweight game framework for making 2D games.  It aims to
+                    implement an API quite similar to (a Rustified version of) the Love2D game engine.  This means it will contain
+                    portable basic functionality, without including things that force your game to function a particular way.</p>
 
-<p>It's not meant to be everything to everyone, but rather a good base upon which to build higher-level systems and a useful tool that lets you immediately get started on projects such as game jams.  As such, it provides:</p>
+                <p>It's not meant to be everything to everyone, but rather a good base upon which to build higher-level systems and a useful tool that lets you immediately get started on projects such as game jams.  As such, it provides:</p>
 
-<ul>
-<li>Filesystem abstraction that lets you load resources from folders or zip files</li>
-<li>Hardware-accelerated rendering of images</li>
-<li>Playing and loading sounds</li>
-<li>Text rendering with TTF and bitmap fonts</li>
-<li>Interface for handling keyboard and mouse events easily through callbacks</li>
-<li>Config file for defining engine and game settings</li>
-<li>Easy timing and FPS measurement functions.</li>
-</ul>
+                <ul>
+                    <li>Filesystem abstraction that lets you load resources from folders or zip files</li>
+                    <li>Hardware-accelerated rendering of images</li>
+                    <li>Playing and loading sounds</li>
+                    <li>Text rendering with TTF and bitmap fonts</li>
+                    <li>Interface for handling keyboard and mouse events easily through callbacks</li>
+                    <li>Config file for defining engine and game settings</li>
+                    <li>Easy timing and FPS measurement functions.</li>
+                </ul>
 
-<h2>
-<a id="getting-it" class="anchor" href="#getting-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting it</h2>
+                <h2>
+                    <a id="getting-it" class="anchor" href="#getting-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting it</h2>
 
-<p>ggez is built on the latest stable Rust compiler and distributed on .  To include it in your project, just
-add the dependency line to your <code>Cargo.toml</code> file:</p>
+                <p>ggez is built on the latest stable Rust compiler and distributed on <a href="https://crates.io">crates.io</a>. To include it in your project, just
+                    add the dependency line to your <code>Cargo.toml</code> file:</p>
 
 <pre><code>ggez = "0.2.0"
 </code></pre>
 
-<p>Or, check out the <a href="https://github.com/ggez/ggez">github page!</a></p>
+                    <p>Or, check out the <a href="https://github.com/ggez/ggez">github page!</a></p>
 
-<h2>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+                    <h2>
+                        <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
 
-<p>See the auto-generated docs at <a href="https://docs.rs/ggez/">docs.rs</a></p>
+                    <p>See the auto-generated docs at <a href="https://docs.rs/ggez/">docs.rs</a></p>
 
-<h2>
-<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+                    <h2>
+                        <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
 
-<p>The best place to find example code is in the project <code>examples</code> directory.  There is a simple hello-world example, and a more complete asteroids-like game.</p>
+                    <p>The best place to find example code is in the project <code>examples</code> directory.  There is a simple hello-world example, and a more complete asteroids-like game.</p>
 
-<p>Here's what hello world looks like.  It's a bit verbose, sorry.  :-P</p>
+                    <p>Here's what hello world looks like.  It's a bit verbose, sorry.  :-P</p>
 
-<div class="highlight highlight-source-rust"><pre><span class="pl-k">extern</span> <span class="pl-k">crate</span> ggez<span class="pl-k">;</span>
+                    <div class="highlight highlight-source-rust"><pre><span class="pl-k">extern</span> <span class="pl-k">crate</span> ggez<span class="pl-k">;</span>
 <span class="pl-k">use</span> std<span class="pl-k">::</span>path<span class="pl-k">;</span>
 <span class="pl-k">use</span> ggez<span class="pl-k">::</span>conf<span class="pl-k">;</span>
 <span class="pl-k">use</span> ggez<span class="pl-k">::</span>game<span class="pl-k">::</span>{<span class="pl-k">Game</span><span class="pl-k">,</span> <span class="pl-k">GameState</span>}<span class="pl-k">;</span>
@@ -129,21 +129,21 @@ add the dependency line to your <code>Cargo.toml</code> file:</p>
 }
 </pre></div>
 
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+                    <h2>
+                        <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
-<p>ggez is released under an MIT license.</p>
+                    <p>ggez is released under an MIT license.</p>
 
-<h2>
-<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
+                    <h2>
+                        <a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
 
-<p>Open an issue in the Github project, or join us in <code>#rust-gamedev</code> on <code>irc.mozilla.org</code>.</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
-</html>
+                    <p>Open an issue in the Github project, or join us in <code>#rust-gamedev</code> on <code>irc.mozilla.org</code>.</p>
+                </section>
+                <footer>
+                    <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+                </footer>
+            </div>
+            <script src="javascripts/scale.fix.js"></script>
+
+        </body>
+    </html>
