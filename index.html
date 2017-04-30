@@ -3,34 +3,32 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>ggez by ggez</title>
+        <title>ggez: Rust game thing</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <a class="github-fork-ribbon" href="https://github.com/ggez/ggez" title="Fork me on GitHub">Fork me on GitHub</a>
-        <div class="wrapper">
+        <div class="container">
+            <a class="github-fork-ribbon" href="https://github.com/ggez/ggez" title="Fork me on GitHub">Fork me on GitHub</a>
             <header>
-                <h1>gge</h1>
-                <p>make good games easily</p>
-
-
-                <p class="view"><a href="https://github.com/ggez">View My GitHub Profile</a></p>
-
+                <h1><a href="/">ggez</a></h1>
             </header>
-            <section>
-                <h1>
-                    <a id="ggez" class="anchor" href="#ggez" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ggez</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Guides</a></li>
+                    <li><a href="https://github.com/ggez/ggez/examples">Examples</a></li>
+                    <li><a href="https://docs.rs/ggez/">API Docs</a></li>
+                </ul>
+            </nav>
 
-                <p>A Rust library to create Good Games Easily.</p>
+            <section class="main">
+                <h2>A Rust library to create Good Games Easily</h2>
 
-                <p>More specifically, ggez is a lightweight game framework for making 2D games.  It aims to
-                    implement an API quite similar to (a Rustified version of) the Love2D game engine.  This means it will contain
-                    portable basic functionality, without including things that force your game to function a particular way.</p>
-
+                <p>ggez is a lightweight game framework for making 2D games. It is built with simplicity and portability in mind.
+                </p>
                 <p>It's not meant to be everything to everyone, but rather a good base upon which to build higher-level systems and a useful tool that lets you immediately get started on projects such as game jams.  As such, it provides:</p>
 
                 <ul>
@@ -139,9 +137,8 @@
                     <p>Open an issue in the Github project, or join us in <code>#rust-gamedev</code> on <code>irc.mozilla.org</code>.</p>
                 </section>
                 <footer>
-                    <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+                    Copright © 2015-2017 Sven-Hendrik Haase
                 </footer>
             </div>
-            <script src="javascripts/scale.fix.js"></script>
         </body>
     </html>
