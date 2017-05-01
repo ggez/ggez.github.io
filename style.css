@@ -1,21 +1,42 @@
+html {
+  font-family: Roboto, "Helvetica Neue", "Open Sans"; }
+
 body {
   margin: 0; }
 
 header {
-  grid-area: header; }
+  grid-area: header;
+  margin-bottom: 20pt; }
 
 nav {
   grid-area: nav; }
 
 nav li {
   display: inline;
-  margin: 10pt; }
+  margin: 10pt;
+  font-size: 16pt; }
+
+a {
+  text-decoration: none; }
 
 .main {
-  grid-area: main; }
+  grid-area: main;
+  justify-items: center; }
 
 footer {
   grid-area: footer; }
+
+.banner {
+  width: 30em;
+  text-align: center;
+  margin: 0 auto 50pt auto; }
+
+.banner h1 {
+  margin-bottom: 30pt;
+  font-size: 30pt; }
+
+.banner p {
+  font-size: 16pt; }
 
 .container {
   margin: 20pt auto;

@@ -1,11 +1,6 @@
-// .wrapper {
-//     max-width: 60em;
-//     margin: 0 auto;
-//     display: flex;
-//     justify-content: space-between;
-//     flex-direction: column;
-// }
-//
+html {
+    font-family: Roboto, "Helvetica Neue", "Open Sans";
+}
 
 body {
     margin: 0;
@@ -13,6 +8,7 @@ body {
 
 header {
     grid-area: header;
+    margin-bottom: 20pt;
 }
 
 nav {
@@ -22,14 +18,35 @@ nav {
 nav li {
     display: inline;
     margin: 10pt;
+    font-size: 16pt;
+}
+
+a {
+    text-decoration: none;
 }
 
 .main {
     grid-area: main;
+    justify-items: center;
 }
 
 footer {
     grid-area: footer;
+}
+
+.banner {
+    width: 30em;
+    text-align: center;
+    margin: 0 auto 50pt auto;
+}
+
+.banner h1 {
+    margin-bottom: 30pt;
+    font-size: 30pt;
+}
+
+.banner p {
+    font-size: 16pt;
 }
 
 .container {
@@ -54,14 +71,3 @@ footer {
             "footer";
     }
 }
-
-//
-// .main-nav {
-//     justify-content: flex-end;
-// }
-//
-// .site-top {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-// }
