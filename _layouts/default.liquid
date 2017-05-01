@@ -7,14 +7,15 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github&#45;fork&#45;ribbon&#45;css/0.2.0/gh&#45;fork&#45;ribbon.min.css" /> -->
-        <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/hopscotch.min.css">
+        <link rel="stylesheet" href="style/style.css">
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
         <div class="container">
             <!-- <a class="github&#45;fork&#45;ribbon" href="https://github.com/ggez/ggez" title="Fork me on GitHub">Fork me on GitHub</a> -->
             <header>
-                <h1><a href="/">ggez</a></h1>
+                <a id="logo" href="/"></a>
             </header>
             <nav>
                 <ul>
@@ -25,21 +26,23 @@
             </nav>
 
             <section class="main">
-                {{ content }}
                 <section class="banner">
                     <h1>A Rust library to create Good Games Easily</h1>
                     <p>ggez is a lightweight game framework for making 2D games. It is built with simplicity and portability in mind.</p>
 
                 </section>
 
-
-                <hr/>
+                {{ content }}
 
                 <p>It's not meant to be everything to everyone, but rather a good base upon which to build higher-level systems and a useful tool that lets you immediately get started on projects such as game jams.  As such, it provides:</p>
 
                 <footer>
                     Copright © 2015-2017 Sven-Hendrik Haase
                 </footer>
-            </div>
-        </body>
-    </html>
+            </section>
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/rust.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
