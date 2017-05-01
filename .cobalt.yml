@@ -1,0 +1,8 @@
+name: ggez
+source: "./"
+dest: "build"
+ignore:
+  - .git/*
+  - build/*
+  - style/style.scss
+  - "*.sh"

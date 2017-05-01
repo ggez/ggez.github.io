@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-watchexec --exts scss --restart "sassc style.scss style.css"
+watchexec --exts md,liquid,scss --restart "sassc style/style.scss style/style.css && cobalt serve"
