@@ -1,7 +1,15 @@
 extends: default.liquid
 ---
 
-lol
+
+<section class="banner">
+    <h1>A Rust library to create Good Games Easily</h1>
+</section>
+    <p class="text">More specifically, ggez is a lightweight game framework for making 2D
+games with minimum friction.  It aims to implement an API based on (a
+Rustified version of) the <a href="https://love2d.org/">LÖVE</a> game framework.  Thus it contains portable 2D drawing, sound, resource loading and
+event handling.</p>
+
 
 <pre>
     <code class="rust">
@@ -46,3 +54,17 @@ pub fn main() {
 }
     </code>
 </pre>
+
+
+<p class="text">ggez is not meant to be everything to everyone, but rather a good base upon which to build higher-level systems and a useful tool that lets you immediately get started on projects such as game jams.  As such, it provides:</p>
+
+
+<ul class="text">
+<li>Filesystem abstraction that lets you load resources from folders or zip files</li>
+<li>Hardware-accelerated rendering engine built on the `gfx-rs` graphics engine</li>
+<li>Playing and loading .ogg, .wav and .flac files via the `rodio` crate</li>
+<li>TTF font rendering with `rusttype`, as well as bitmap fonts</li>
+<li>Interface for handling keyboard and mouse events easily through callbacks</li>
+<li>Config file for defining engine and game settings</li>
+<li>Easy timing and FPS measurement functions</li>
+</ul>

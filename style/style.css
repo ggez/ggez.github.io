@@ -1,5 +1,5 @@
 html {
-  font-family: Roboto, "Helvetica Neue", "Open Sans"; }
+  font-family: Roboto, "Helvetica Neue", "Open Sans", "Sans"; }
 
 body {
   margin: 0;
@@ -28,7 +28,8 @@ nav li {
 
 a {
   text-decoration: none;
-  color: white; }
+  font-weight: bold;
+  color: #CCC; }
 
 .main {
   grid-area: main;
@@ -40,8 +41,11 @@ code {
 footer {
   grid-area: footer; }
 
+.text {
+  font-size: 14pt;
+  line-height: 20pt; }
+
 .banner {
-  width: 30em;
   text-align: center;
   margin: 0 auto 50pt auto; }
 
