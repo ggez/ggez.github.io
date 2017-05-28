@@ -1,0 +1,72 @@
+html {
+  font-family: Roboto, "Helvetica Neue", "Open Sans", "Sans"; }
+
+body {
+  margin: 0;
+  background-color: #322931;
+  color: white; }
+
+header {
+  grid-area: header;
+  margin-bottom: 20pt; }
+
+#logo {
+  display: block;
+  text-indent: -9999px;
+  width: 270px;
+  height: 100px;
+  background: url(/assets/ggez-white.svg);
+  background-size: 270px 100px; }
+
+nav {
+  grid-area: nav; }
+
+nav li {
+  display: inline;
+  margin: 10pt;
+  font-size: 16pt; }
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #CCC; }
+
+.main {
+  grid-area: main;
+  justify-items: center; }
+
+code {
+  font-size: 10pt; }
+
+footer {
+  grid-area: footer; }
+
+.text {
+  font-size: 14pt;
+  line-height: 20pt; }
+
+.banner {
+  text-align: center;
+  margin: 0 auto 50pt auto; }
+
+.banner h1 {
+  margin-bottom: 30pt;
+  font-size: 30pt; }
+
+.banner p {
+  font-size: 16pt;
+  line-height: 1.5em;
+  font-weight: 300; }
+
+.container {
+  margin: 20pt auto;
+  padding: 0 20pt;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: 2fr auto;
+  grid-template-areas: "header nav" "main main" "footer footer"; }
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "nav" "main" "footer"; } }
