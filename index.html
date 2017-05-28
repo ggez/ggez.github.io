@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>ggez: Rust game thing</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github&#45;fork&#45;ribbon&#45;css/0.2.0/gh&#45;fork&#45;ribbon.min.css" /> -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/hopscotch.min.css">
+        <link rel="stylesheet" href="style/style.css">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div class="container">
+            <!-- <a class="github&#45;fork&#45;ribbon" href="https://github.com/ggez/ggez" title="Fork me on GitHub">Fork me on GitHub</a> -->
+            <header>
+                <a id="logo" href="/"></a>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="/screenshots.html">Screenshots</a></li>
+                    <li><a href="https://github.com/ggez/ggez/tree/master/examples">Examples</a></li>
+                    <li><a href="https://docs.rs/ggez/">API Docs</a></li>
+                    <li><a href="https://github.com/ggez/ggez/">Source and install instructions</a></li>
+                </ul>
+            </nav>
+
+            <section class="main">
+
+                <section class="banner">
+    <h1>A Rust library to create Good Games Easily</h1>
+</section>
+    <p class="text">More specifically, ggez is a lightweight game framework for making 2D
+games with minimum friction.  It aims to implement an API based on (a
+Rustified version of) the <a href="https://love2d.org/">LÖVE</a> game framework.  Thus it contains portable 2D drawing, sound, resource loading and
+event handling.</p>
+
+
+<pre>
+    <code class="rust">
+extern crate ggez;
+use ggez::conf;
+use ggez::event;
+use ggez::{GameResult, Context};
+use ggez::graphics;
+use ggez::graphics::{Color, DrawMode, Point};
+use std::time::Duration;
+
+struct MainState {
+    pos_x: f32,
+}
+
+impl MainState {
+    fn new(ctx: &mut Context) -> GameResult<MainState> {
+        let s = MainState { pos_x: 0.0 };
+        Ok(s)
+    }
+}
+
+impl event::EventHandler for MainState {
+    fn update(&mut self, _ctx: &mut Context, _dt: Duration) -> GameResult<()> {
+        self.pos_x = self.pos_x % 800.0 + 1.0;
+        Ok(())
+    }
+
+    fn draw(&mut self, ctx: &mut Context) -> GameResult<()> {
+        graphics::clear(ctx);
+        graphics::circle(ctx, DrawMode::Fill, Point { x: self.pos_x, y: 380.0 }, 100.0, 32)?;
+        graphics::present(ctx);
+        Ok(())
+    }
+}
+
+pub fn main() {
+    let c = conf::Conf::new();
+    let ctx = &mut Context::load_from_conf("super_simple", "ggez", c).unwrap();
+    let state = &mut MainState::new(ctx).unwrap();
+    event::run(ctx, state).unwrap();
+}
+    </code>
+</pre>
+
+
+<p class="text">ggez is not meant to be everything to everyone, but rather a good base upon which to build higher-level systems and a useful tool that lets you immediately get started on projects such as game jams.  As such, it provides:</p>
+
+
+<ul class="text">
+<li>Filesystem abstraction that lets you load resources from folders or zip files</li>
+<li>Hardware-accelerated rendering engine built on the `gfx-rs` graphics engine</li>
+<li>Playing and loading .ogg, .wav and .flac files via the `rodio` crate</li>
+<li>TTF font rendering with `rusttype`, as well as bitmap fonts</li>
+<li>Interface for handling keyboard and mouse events easily through callbacks</li>
+<li>Config file for defining engine and game settings</li>
+<li>Easy timing and FPS measurement functions</li>
+</ul>
+
+                <footer>
+                    Copright © 2015-2017 Sven-Hendrik Haase
+                </footer>
+            </section>
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/rust.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
