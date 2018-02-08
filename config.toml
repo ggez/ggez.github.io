@@ -1,0 +1,9 @@
+base_url = "https://ggez.rs"
+title = "ggez: Rust game thing"
+description = "Rust library to create a Good Game Easily"
+compile_sass = true
+highlight_code = true
+highlight_theme = "1337"
+
+[extra]
+# Put all your custom variables here
