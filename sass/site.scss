@@ -4,27 +4,18 @@ html {
 
 body {
     margin: 0;
-    background-color: #191919;
+    background-color: #3d88d2;
     color: white;
 }
 
 header {
-    grid-area: header;
     margin-bottom: 20pt;
-}
-
-#logo {
-    display: block;
-    text-indent: -9999px;
-    width: 220px;
-    height: 100px;
-    background: url(/ggez-white.svg);
-    background-size: 220px 100px;
+    // background: linear-gradient(#c33764, #1d2671);
 }
 
 nav {
-    grid-area: nav;
-    margin-top: 10pt;
+    margin-top: 15pt;
+    margin-right: 10pt;
 }
 
 nav li {
@@ -34,25 +25,39 @@ nav li {
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #CCC;
-}
-
-.main {
-    grid-area: main;
-    justify-items: center;
-}
-
-code {
-    font-size: 10pt;
+main {
 }
 
 footer {
-    grid-area: footer;
+    display: flex;
+    justify-content: center;
 }
 
+section {
+    // padding: 30pt;
+}
+
+section:nth-child(odd) {
+    // background-color: #191919;
+}
+
+#logo {
+    display: block;
+    width: 220px;
+    height: 100px;
+    background: url(/ggez-white.svg);
+    background-size: 220px 100px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.alternate-colors {
+    background-color: #191919;
+}
 
 .text {
     font-size: 14pt;
@@ -73,32 +78,46 @@ footer {
     font-size: 16pt;
     line-height: 1.5em;
     font-weight: 300;
+    padding: 0 5em;
 }
-
 
 .container {
     margin: 20pt auto;
     padding: 0 20pt;
     max-width: 1280px;
-    display: grid;
-    grid-template-columns: 2fr auto;
-    grid-template-areas:
-    "header nav"
-    "main main"
-    "footer footer";
-}
-
-@media (max-width: 600px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "header"
-        "nav"
-        "main"
-        "footer";
-    }
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 pre {
     font-size: 0.8em;
+}
+
+code {
+    font-size: 10pt;
+}
+
+.feature {
+    width: calc(100% * (1/3));
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.feature p {
+    padding: 0 2em;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 7px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
