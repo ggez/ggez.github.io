@@ -1,19 +1,17 @@
 The website for [ggez.rs](http://ggez.rs).
 
-Built with [gutenberg](https://github.com/Keats/gutenberg) 0.4.
+Built with [zola 0.5](https://github.com/getzola/zola/releases)
 
 This is the devel branch where we're trying to figure out what
 the heck to do now.
 
 # Setup
 
+
 ```
-git clone git@github.com:Keats/gutenberg.git`
-
-# last tested on commit 742987144c0b70137fe715a3b4a4d05d01c38220)
-
-cd gutenberg
-git submodule update --init
+wget https://github.com/getzola/zola/archive/v0.5.1.tar.gz
+tar -xvf v0.5.1.tar.gz
+cd zola-0.5.1.tar.gz
 cargo build --release
 cargo install
 ```
@@ -22,5 +20,5 @@ cargo install
 
 ```
 cd ggez.github.io/src
-gutenberg serve
+zola serve
 ```
