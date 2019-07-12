@@ -49,7 +49,7 @@ struct MainState {
 }
 
 impl MainState {
-    fn new(_ctx: &mut ggez::Context) -> ggez::GameResult<MainState> {
+    fn new() -> ggez::GameResult<MainState> {
         let s = MainState { pos_x: 0.0 };
         Ok(s)
     }
@@ -94,18 +94,19 @@ pub fn main() -> ggez::GameResult {
 
 <ul class="text">
 <li>Filesystem abstraction that lets you load resources from folders or zip files</li>
-<li>Hardware-accelerated rendering engine built on the `gfx-rs` graphics engine</li>
-<li>Playing and loading .ogg, .wav and .flac files via the `rodio` crate</li>
-<li>TTF font rendering with `rusttype`, as well as bitmap fonts</li>
+<li>Hardware-accelerated rendering engine built on the <code>gfx-rs</code> graphics engine</li>
+<li>Playing and loading .ogg, .wav and .flac files via the <code>rodio</code> crate</li>
+<li>TTF font rendering with <code>glyph_brush</code></li>
 <li>Interface for handling keyboard and mouse events easily through callbacks</li>
 <li>Config file for defining engine and game settings</li>
 <li>Easy timing and FPS measurement functions</li>
-<li>Math integration with <a href="http://nalgebra.org/">nalgebra</a></li>
+<li>Math integration with <code><a href="https://github.com/kvark/mint">mint</a></code>, letting
+  you use any vector math library</li>
 <li>Some more advanced graphics options: shaders, sprite batches and render targets</li>
 </ul>
 
                 <footer>
-                    Copyright © 2015-2018 Sven-Hendrik Haase
+                    Copyright © 2015-2019 Sven-Hendrik Haase and Simon Heath
                 </footer>
             </section>
         </div>
