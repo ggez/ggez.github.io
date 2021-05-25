@@ -58,6 +58,10 @@ footer {
   line-height: 1.5em;
   font-weight: 300; }
 
+.madeWith {
+  margin-top: 70pt;
+}
+
 .container {
   margin: 20pt auto;
   padding: 0 20pt;
