@@ -62,7 +62,10 @@ impl event::EventHandler&lt;ggez::GameError&gt; for MainState {
     }
 
     fn draw(&mut self, ctx: &mut Context) -> GameResult {
-        graphics::clear(ctx, [0.1, 0.2, 0.3, 1.0].into());
+        let mut canvas = graphics::Canvas::from_frame(
+            ctx,
+            graphics::CanvasLoadOp::Clear([0.1, 0.2, 0.3, 1.0].into()),
+        );
 
         let circle = graphics::Mesh::new_circle(
             ctx,
@@ -72,9 +75,9 @@ impl event::EventHandler&lt;ggez::GameError&gt; for MainState {
             2.0,
             Color::WHITE,
         )?;
-        graphics::draw(ctx, &circle, (Vec2::new(self.pos_x, 380.0),))?;
+        canvas::draw(&circle, Vec2::new(self.pos_x, 380.0));
 
-        graphics::present(ctx)?;
+        canvas::finish(ctx)?;
         Ok(())
     }
 }
@@ -94,7 +97,7 @@ pub fn main() -> GameResult {
 
 <ul class="text">
 <li>Filesystem abstraction that lets you load resources from folders or zip files</li>
-<li>Hardware-accelerated rendering engine built on the <code>gfx-rs</code> graphics engine</li>
+<li>Hardware-accelerated rendering engine built on the <code>wgpu</code> graphics engine</li>
 <li>Playing and loading .ogg, .wav and .flac files via the <code>rodio</code> crate</li>
 <li>TTF font rendering with <code>glyph_brush</code></li>
 <li>Interface for handling keyboard and mouse events easily through callbacks</li>
@@ -102,7 +105,7 @@ pub fn main() -> GameResult {
 <li>Easy timing and FPS measurement functions</li>
 <li>Math integration with <code><a href="https://github.com/kvark/mint">mint</a></code>, letting
   you use any vector math library</li>
-<li>Some more advanced graphics options: shaders, sprite batches and render targets</li>
+<li>Some more advanced graphics options: shaders, instanced drawing and render targets</li>
 </ul>
 
                 <footer>
