@@ -64,7 +64,7 @@ impl event::EventHandler&lt;ggez::GameError&gt; for MainState {
     fn draw(&mut self, ctx: &mut Context) -> GameResult {
         let mut canvas = graphics::Canvas::from_frame(
             ctx,
-            graphics::CanvasLoadOp::Clear([0.1, 0.2, 0.3, 1.0].into()),
+            graphics::Color::from([0.1, 0.2, 0.3, 1.0]),
         );
 
         let circle = graphics::Mesh::new_circle(
@@ -75,9 +75,9 @@ impl event::EventHandler&lt;ggez::GameError&gt; for MainState {
             2.0,
             Color::WHITE,
         )?;
-        canvas::draw(&circle, Vec2::new(self.pos_x, 380.0));
+        canvas.draw(&circle, Vec2::new(self.pos_x, 380.0));
 
-        canvas::finish(ctx)?;
+        canvas.finish(ctx)?;
         Ok(())
     }
 }
@@ -105,7 +105,7 @@ pub fn main() -> GameResult {
 <li>Easy timing and FPS measurement functions</li>
 <li>Math integration with <code><a href="https://github.com/kvark/mint">mint</a></code>, letting
   you use any vector math library</li>
-<li>Some more advanced graphics options: shaders, instanced drawing and render targets</li>
+<li>Some more advanced graphics options: shaders, sprite batches (i.e. instanced drawing) and render targets</li>
 </ul>
 
                 <footer>
